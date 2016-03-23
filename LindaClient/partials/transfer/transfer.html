@@ -1,0 +1,36 @@
+<div class="jumbotron">
+
+<div class="row">
+    <div class="col-sm-5">
+        <form class="form-signin" ng-submit="transSubmit()">
+            <label class="">* Account</label>
+            <select id="selectAccount" class="form-control selectpicker"
+                ng-model="account" ng-change="change()" ng-disabled="submiting"
+                ng-options="option.accountNo as option.accountNo for option in accounts">
+            </select>
+            <label class="">* RecAccount</label>
+            <input id="inputRec" class="form-control" 
+                ng-model="formData.revAcc" ng-disabled="submiting" required>
+            <label class="">* Amt</label>
+            <input id="inputAmt" class="form-control" ng-model="formData.amt" ng-disabled="submiting" required>
+            <label class="">Info</label>
+            <input id="inputInfo" class="form-control" ng-model="formData.info" ng-disabled="submiting" required>    
+            <label class="">* Pwd</label>
+            <input type="password" id="inputPwd" class="form-control" 
+                ng-model="formData.pwd" ng-disabled="submiting" required>
+            <button class="btn btn-lg btn-primary btn-block btnSubmit" type="submit" ng-disabled="submiting">submit</button>
+        </form>
+    </div><!-- /.col-sm-4 -->
+    <div class="col-sm-4 col-sm-offset-1 blog-sidebar">         
+      <div class="sidebar-module">
+        <h4>Tips</h4>
+        <p><em>inner transfer input required item then click submit button to complete.</em></p>
+      </div>   
+      <div class="sidebar-module error" ng-show="result">
+        <h4>ErrorMessage</h4>
+        <p><em>{{errorCode}} : {{errorMes}}</em></p>
+      </div>      
+    </div>
+</div>
+
+</div>

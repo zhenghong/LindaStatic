@@ -1,0 +1,33 @@
+<div class="jumbotron">
+  <div class="row">
+      <div class="col-sm-5">
+        <!-- SHOW ERROR/SUCCESS MESSAGES -->
+        <div id="messages" class="well" ng-show="message">{{ message }}</div>
+        
+        <form class="form-signin" ng-submit="processForm()" >
+            <label class="">UserId</label>
+            <input ng-model="user.userId" id="inputUserId" class="form-control" 
+              placeholder="" required="" autofocus="true">
+            <label class="">Password</label>
+            <input ng-model="user.password" type="password" id="inputPassword" class="form-control" 
+              placeholder="" required="">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+      </div>
+      <div class="col-sm-4 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module">
+            <h4>Tips</h4>
+            <p><em>please input the userid and passwd.</em></p>
+          </div>
+          <div class="sidebar-module error" ng-show="result">
+            <h4>ErrorMessage</h4>
+            <p><em>{{errorCode}} : {{errorMes}}</em></p>
+          </div>           
+      </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>flowno</th>
+        <th>account</th>
+        <th>recAccount</th>
+        <th>amount</th>
+        <th>time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="account in accountList">
+        <td>{{account.flowno}}</td>
+        <td>{{account.acc}}</td>
+        <td>{{account.revAcc}}</td>
+        <td>{{account.amt}}</td>
+        <td>{{account.time}}</td>
+      </tr>             
+    </tbody>
+  </table>
+</div>

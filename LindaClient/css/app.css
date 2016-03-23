@@ -1,0 +1,88 @@
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.btn-block {
+  width: 60%;
+}
+
+th {
+  font-size: 14px;
+}
+
+tr {
+  font-size: 12px;
+}
+
+.dropdown-toggle {
+  font-size: 14px;
+  font-weight: 700;
+  color: black;
+}
+
+.dropdown  {
+	margin-bottom: 5px;
+}
+
+.btnSubmit {
+	margin-top: 20px;
+}
+
+.jumbotron p {
+  font-size: 14px;
+  color: blue;
+}
+
+.navbar-brand {
+  font-size: 22px;
+}
+
+.error h4 {
+  color: red;
+}
+
+.error em {
+  color: red;
+}
+
+.notice{
+      width:250px;
+      height:120px;
+      display:none;
+      z-index:999;
+      background-color:#f7521b;
+      color:#FFFFFF;
+      padding: 1px 5px;
+      margin: 2px 2px;
+      position:absolute;
+      right:0;
+      bottom:0;
+    }
+.notice .p1{
+  margin:2px 0px;
+  height:18px;
+}
+.notice span.x{
+  color:#000000;
+  float:right;
+  cursor: pointer;
+}
+.notice a{
+  color:#FFFFFF;
+  text-decoration: none;
+}
+.notice a:hover{
+  color:red;
+  text-decoration: underline;
+}
+.notice .p2{
+  margin:2px 6px;
+  height:18px;
+  line-height:18px;
+}
+
