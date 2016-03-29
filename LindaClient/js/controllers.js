@@ -4,27 +4,24 @@
 function init($rootScope) {
 
 	$rootScope.userState = {"login":true,"logout":false};
-
-	// websocket
-	ws($rootScope);
-
 }
 
-function ws($rootScope){
+function ws($rootScope, uid){
 
 	var socket = new SockJS('/LindaMQ/random');
 	var client = Stomp.over(socket);
 
 	client.connect('user', 'password', function(frame) {
 
-	  client.subscribe("/queue/asyncQueue", function(message) {
+	  client.subscribe("/queue/asyncQueue_" + uid, function(message) {
 
-		$rootScope.notice = "您尾号 5678 的帐户发生一笔金额 " + message.body + " 的转帐！";
+		$rootScope.notice = 
+			"您尾号 5678 的帐户发生一笔金额 " + JSON.parse(message.body) + " 的转帐！";
 
 		window.setTimeout(function(){
 
 			$("#notice").fadeIn("normal");
-		
+
 		},2000);
 
 		window.setTimeout(function(){
@@ -74,6 +71,9 @@ function login($scope, $http, $location, $rootScope ) {
 	    		$rootScope.userState = {"login":false,"logout":true};
 	    		$rootScope.userName = data.userName;
 	    		$rootScope.SID = data.sid;
+
+	    		// websocket
+				ws($rootScope, data.userName);
             }
 	    }).error(function(data){
 	    	alert("通讯失败！");
@@ -94,7 +94,7 @@ function logout($rootScope,  $http){
 
     }).success(function(data) {
 		//callback function
-		console.log(data);
+		//console.log(data);
 	
 		$rootScope.userState = {"login":true,"logout":false};
 		$rootScope.userName = "";
